@@ -60,9 +60,35 @@ def labTwo(randomRange, shapeLength):
     michelangelo.forward(shapeLength)
     michelangelo.right(3.6)
   michelangelo.clear()
+  
+def askShape():
+  count = 0
+  michelangelo.down()
+  while(count == 0): 
+   shape = input("What shape should I draw? (Triangle, Square, Circle):")
+   shapeLength = int(input("Length of " + str(shape) + "?"))
+   
+
+   if shape == "Triangle":
+     for i in range(3):
+       michelangelo.forward(shapeLength)
+       michelangelo.right(120)
+       count += 1
+   elif shape == "Square":
+     for i in range(4):
+       michelangelo.forward(shapeLength)
+       michelangelo.right(90)
+       count += 1
+   elif shape == "Circle":
+      michelangelo.circle(shapeLength)
+      count += 1
+   else:
+      print("This is not a valid shape! Try again.")
+  print("I like your shape. Good choice.")
 
 def main():
   labTwo(100, 20)
+  askShape()
   
 main()
 
