@@ -19,10 +19,10 @@ leonardo.up()
 michelangelo.goto(-100,20)
 leonardo.goto(-100,-20)
 
-def labTwo():
-
-  michelangelo.forward(random.randrange(1,100))
-  leonardo.forward(random.randrange(1,100))
+def labTwo(randomRange, shapeLength):
+  
+  michelangelo.forward(random.randrange(1,randomRange))
+  leonardo.forward(random.randrange(1,randomRange))
 
   michelangelo.goto(-100,20)
   leonardo.goto(-100,-20)
@@ -37,32 +37,32 @@ def labTwo():
   michelangelo.down()
 
   for i in range(3):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(120)
   michelangelo.clear()
 
   for i in range(4):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(90)
   michelangelo.clear()
 
   for i in range(6):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(60)
   michelangelo.clear()
 
   for i in range(20):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(18)
   michelangelo.clear()
 
   for i in range(100):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(3.6)
   michelangelo.clear()
 
 def main():
-  labTwo()
+  labTwo(100, 20)
   
 main()
 
