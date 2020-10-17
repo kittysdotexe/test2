@@ -33,56 +33,67 @@ def turtleSetUp():
   leonardo.goto(-100,-20)
 
 
-def labTwoPartA():
+def labTwoPartA(randomRange):
   '''
    Races the two Turtles.
-   No args.
+   Argument is randomRange.
    No return value.
   '''
  
   for i in range(0, 10):
-    michelangelo.forward(random.randrange(0,10))
-    leonardo.forward(random.randrange(0,10))
+    michelangelo.forward(random.randrange(0,randomRange))
+    leonardo.forward(random.randrange(0,randomRange))
 
   michelangelo.goto(-100,20)
   leonardo.goto(-100,-20)
 
   michelangelo.down()
 
-def labTwoPartB():
-'''
-  Draws shapes.
-  No args.
-  No return value.
+def askUser():
  '''
+  Asks User for Shape Length.
+  No args.
+  Returns shapeLength.
+ '''  
+ shapeLength = int(input("Length of Shape?"))
+ return shapeLength
+
+def labTwoPartB():
+  '''
+   Draws Shapes.
+   No args.
+   No return value.
+  '''
+
+  shapeLength = int(askUser())
   for i in range(3):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(120)
   michelangelo.clear()
 
   for i in range(4):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(90)
   michelangelo.clear()
 
   for i in range(6):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(60)
   michelangelo.clear()
 
   for i in range(20):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(18)
   michelangelo.clear()
 
   for i in range(100):
-    michelangelo.forward(100)
+    michelangelo.forward(shapeLength)
     michelangelo.right(3.6)
   michelangelo.clear()
 
 def main():
  turtleSetUp()
- labTwoPartA()
+ labTwoPartA(100)
  labTwoPartB()
 
 main()
